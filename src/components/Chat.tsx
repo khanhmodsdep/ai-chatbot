@@ -109,8 +109,7 @@ export default function Chat() {
       // Sử dụng new Google GenAI SDK như ví dụ
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-preview-04-17",
-        contents: message,
-        maxOutputTokens: 8192,
+        contents: [{ text: message }],
       });
       
       const text = response.text;
